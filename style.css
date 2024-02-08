@@ -8,17 +8,23 @@ body {
     gap: 40px;
 
     font-family: 'Roboto', sans-serif;
+    background-color: #ccc;
 }
 
 .header {
     margin-top: 35px;
+}
+.title {
+    color: #333;
+    font-size: 40px;
+    font-weight: 900;
 }
 
 .container {
     display: flex;
     width: 512px;
     height: 512px;
-    border: 2px solid #ccc;
+    border: 2px solid black;
 }
 
 .ui-wrapper {
