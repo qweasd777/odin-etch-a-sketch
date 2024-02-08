@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="header">
-        <h1 class="title" >Etch-a-Sketch</h1>    
+        <div class="title" >Etch-a-Sketch</div>    
     </div>
     
     <div class="container">
@@ -17,14 +17,17 @@
     </div>
 
     <div class="ui-wrapper">
-        <div class="row1">
-            <button id="setGrid">Set Grid</button>
+        <div class="top">
+            <div id="setGrid">Grid Size</div> 
+            <input type="range" class="slider" id="gridSize" min="1" max="100" value="16" >
+            <button id="setEraser">Eraser</button>
         </div>
-        <div class="row2">
+        <div class="mid">
+            <button id="setNormal">Normal</button>
+            <button id="setShading">Shading</button>
             <button id="setRGB">RGB</button>
-            <button id="setDarken">Darkening Effect</button>
         </div>
-        <div class="row3">
+        <div class="btm">
             <button id="setClear">Clear</button>
         </div>
     </div>
