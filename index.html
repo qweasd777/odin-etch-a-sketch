@@ -8,9 +8,7 @@
     <script src="script.js" defer></script>    
 </head>
 <body>
-    <div class="header">
-        <div class="title" >Etch-a-Sketch</div>    
-    </div>
+    <div class="header" >Etch-a-Sketch</div>    
     
     <div class="container">
         <!-- grid will be implemented thru JS here -->
@@ -18,14 +16,17 @@
 
     <div class="ui-wrapper">
         <div class="top">
-            <div id="gridsizeText">Grid Size</div> 
+            <div class="text">
+                Grid Size: 
+                <div id="gridsizeText"></div>
+            </div> 
             <input type="range" class="slider" id="gridSize" min="1" max="100" value="16" >
-            <button id="setEraser">Eraser</button>
+            <button id="eraser" class="brushType">Eraser</button>
         </div>
         <div class="mid">
-            <button id="setNormal">Normal</button>
-            <button id="setShading">Shading</button>
-            <button id="setRGB">RGB</button>
+            <button id="normal" class="brushType">Normal</button>
+            <button id="shader" class="brushType">Shader</button>
+            <button id="rgb" class="brushType">RGB</button>
         </div>
         <div class="btm">
             <button id="setClear">Clear</button>
