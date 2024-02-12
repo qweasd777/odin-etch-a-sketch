@@ -18,6 +18,7 @@ const Brush = {
 
 const BrushColour = {
 	normal: "#333",
+    normalRGB_value: 51,
 	eraser: "#fff"
 }
 
@@ -48,8 +49,6 @@ function gridInit() {
             col.classList.add('col');
             col.style.flex = "1";
             col.style.backgroundColor = BrushColour.eraser;
-            //col.style.minHeight = "10px";
-            //col.style.minWidth = "10px";
             col.draggable = false;
             row.appendChild(col);
         }
@@ -79,10 +78,23 @@ function colourGridBox(event) {
             break;
 
         case Brush.shader:
-            //const title = document.querySelector(".title");
-            //title.innerHTML = box.style.getAttribute();
-            //box.style.filter = "brightness(0.5)";
+            const header = document.querySelector(".header");
+            let currentRGB = box.style.backgroundColor;
             
+            // 1. substr: extract within brackets of "rgb(r,g,b)"
+            // 2. replace: replace space with '' (/g = all matching values)
+            // 3. split: split into substrings and return as array
+            currentRGB = currentRGB.substring(4, currentRGB.length-1).replace(/ /g, '').split(',');
+            
+            // darken BG colour by 10%
+            for(let i = 0; i < 3; i++)
+            {
+                // if darken by 10% is alrd at normal ink colour, use normal ink colour instead
+                currentRGB[i] = Math.max(currentRGB[i] * 0.9, BrushColour.normalRGB_value);
+            }
+            
+            box.style.backgroundColor = `rgb(${currentRGB})`;
+
             break;
 
         case Brush.rgb:
