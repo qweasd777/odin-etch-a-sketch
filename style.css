@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
 :root {
     --grid-container-size-min: 450px;
-    --grid-container-size-max: 512px;
     --ui-bg-colour: white;
 }
 
@@ -75,23 +74,20 @@ button:active, button.active {
     cursor: pointer;
 }
 
-.header {
-    display: flex;
+h1 {
     color: #333;
-    font-size: 36px;
     font-weight: 900;
-    margin-top: 30px;
+    margin: 30px;
+    font-size: clamp(2rem, 10vw, 3rem);
 }
 
 .container {
     display: flex;
     border: 2px solid black;
-    margin: 30px;
+    margin-bottom: 30px;
 
     min-width: var(--grid-container-size-min);
     min-height: var(--grid-container-size-min);
-    /* max-width: var(--grid-container-size-max);
-    max-height: var(--grid-container-size-max); */
 }
 
 .ui-wrapper {
@@ -101,7 +97,6 @@ button:active, button.active {
     gap: 20px;
     margin-bottom: 30px;
     min-width: var(--grid-container-size-min);
-    max-width: var(--grid-container-size-max);
 }
 
 .ui-wrapper .top, .mid, .btm {
