@@ -36,7 +36,7 @@ button, .text {
     /* Button css by Michael McMillan:
        https://getcssscan.com/css-buttons-examples */
 }
-button:active {
+button:active, button.active {
     box-shadow: 0px 0px 0px 0px;
     top: 5px;
     left: 5px;

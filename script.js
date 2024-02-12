@@ -120,6 +120,19 @@ btnAll_brushes.forEach((btn_brush) => {
     // for each brush btn we add a 'click' listener
     btn_brush.addEventListener('click', (e) => {
         brushType = btn_brush.id;
+
+        // find currently active btn
+        const btn_activeBrush = document.querySelector(".active");
+        
+        // if it's not the same
+        if(btn_brush !== btn_activeBrush)
+        {
+            // remove currently active btn
+            btn_activeBrush.className = btn_activeBrush.className.replace(" active", "");
+
+            // make clicked btn active
+            btn_brush.className += " active";
+        }
     });
 });
 
